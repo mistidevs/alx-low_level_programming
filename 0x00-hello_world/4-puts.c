@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-int main(void) /* Prints string using function puts */
+/**
+* main - prints "Programming is like building a multilingual puzzle
+* using the puts function
+*
+* Return: 0 if successful
+*/
+
+int main(void) 
 {
 char my_string[] = "\"Programming is like building a multilingual puzzle";
 puts(my_string);
