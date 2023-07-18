@@ -3,6 +3,7 @@
 /**
 * print_sign - printing the side on the number line
 * a value appears
+* @n: the character to be checked
 *
 * Return: 0 if successful
 */

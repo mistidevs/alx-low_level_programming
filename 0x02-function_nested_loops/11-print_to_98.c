@@ -3,6 +3,7 @@
 
 /**
 * print_to_98 - print from given number to 98
+* @n: integer to be checked
 *
 * Return: void function
 */

@@ -2,6 +2,7 @@
 
 /**
 * _isalpha - checking whether input is a letter using int c
+* @c: the character to be checked
 *
 * Return: 0 if successful
 */

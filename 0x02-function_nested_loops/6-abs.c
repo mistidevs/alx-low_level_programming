@@ -2,6 +2,7 @@
 
 /**
 * _abs - print absolute value of a number
+* @n: the character to be checked
 *
 * Return: 0 if successful
 */
