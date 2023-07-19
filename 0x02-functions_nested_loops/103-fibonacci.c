@@ -11,7 +11,7 @@ int main(void)
 long int n, o, p, sum;
 n = 1;
 o = 2;
-sum = 0;
+sum = 2;
 
 while (n <= 4000000 && o <= 4000000)
 {
