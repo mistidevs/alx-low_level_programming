@@ -3,33 +3,34 @@
 /**
 * main - First 98 fibonacci numbers
 *
-*
+Rw*
 * Return: 0 if successful
 */
 
 int main(void)
 {
-unsigned long int n, o, p, q;
-printf("1, ");
-printf("2, ");
+int p;
+unsigned long int n, o, q;
+
 p = 0;
-n = 1;
-o = 2;
-while (p < 96)
+n = 0;
+o = 1;
+q = 0;
+while (p < 98)
 {
 q = n + o;
 n = o;
 o = q;
-if (p != 95)
+printf("%lu", q);
+if (p < 97)
 {
-printf("%lu, ", q);
-}
-else
-{
-printf("%lu\n", q);
+printf(", ");
 }
 p++;
 }
+putchar('\n');
 
 return (0);
 }
+
+
