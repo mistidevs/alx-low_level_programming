@@ -9,8 +9,7 @@
 
 int main(void)
 {
-int n, o, p;
-long int q;
+long int n, o, p, q;
 printf("1, ");
 printf("2, ");
 p = 0;
@@ -23,14 +22,15 @@ n = o;
 o = q;
 if (p != 47)
 {
-printf("%ld, ", q);
+printf("%li, ", q);
 }
 else
 {
-printf("%ld\n", q);
+printf("%li\n", q);
 }
 p++;
 }
 
 return (0);
 }
+
