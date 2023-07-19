@@ -38,8 +38,15 @@ else
 {
 _putchar(' ');
 _putchar(res + '0');
+if (q != 9)
+{
 _putchar(',');
 _putchar(' ');
+}
+else
+{
+_putchar('\n');
+}
 }
 }
 }
