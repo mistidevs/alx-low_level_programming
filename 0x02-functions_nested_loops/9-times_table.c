@@ -21,7 +21,6 @@ _putchar(res % 10 + '0');
 }
 else
 {
-_putchar(' ');
 _putchar(res + '0');
 }
 if (q != 9)
