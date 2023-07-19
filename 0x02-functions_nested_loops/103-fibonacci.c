@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/** main - print even numbers of the fibonacci series
+/**
+* main - print even numbers of the fibonacci series
 * not greater than 4,000,000
 *
 * Return: 0 if successful
