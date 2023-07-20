@@ -12,7 +12,7 @@ void print_number(int n)
 int divisor;
 if (n == 0)
 {
-_putchar('0' + n);
+_putchar('0');
 }
 else if (n > 0)
 {
@@ -49,4 +49,5 @@ divisor /= 10;
 }
 }
 }
+
 
