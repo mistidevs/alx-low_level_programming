@@ -32,7 +32,7 @@ divisor /= 10;
 }
 else if (n < 0)
 {
-_putchar('-');
+_putchar('0' - 3);
 n = -n;
 divisor = 1;
 while (n / divisor >= 10)
