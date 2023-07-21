@@ -38,7 +38,6 @@ else if (n % 3 == 0)
 printf("Fizz ");
 }
 }
-printf("\n");
 
 return (0);
 }
