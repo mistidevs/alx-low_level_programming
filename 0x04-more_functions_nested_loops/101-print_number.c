@@ -1,6 +1,32 @@
 #include "main.h"
 
 /**
+* divisor_print - printing using trial division
+* @p: digit
+*
+* Return: nothing it is a void
+*/
+
+void divisor_print(int p)
+{
+int divisor;
+divisor = 1;
+while (p / divisor >= 10)
+{
+divisor *= 10;
+}
+
+while (divisor > 0)
+{
+int digit;
+digit = p / divisor;
+_putchar(digit + '0');
+p %= divisor;
+divisor /= 10;
+}
+}
+
+/**
 * print_number - print number of any length
 * @n: digit
 *
@@ -9,26 +35,13 @@
 
 void print_number(int n)
 {
-int divisor;
 if (n == 0)
 {
 _putchar('0');
 }
 else if (n > 0)
 {
-divisor = 1;
-while (n / divisor >= 10)
-{
-divisor *= 10;
-}
-
-while (divisor > 0)
-{
-int digit = n / divisor;
-_putchar(digit + '0');
-n %= divisor;
-divisor /= 10;
-}
+divisor_print(n);
 }
 else if (n < 0)
 {
@@ -42,20 +55,6 @@ else
 {
 n = -n;
 }
-divisor = 1;
-while (n / divisor >= 10)
-{
-divisor *= 10;
-}
-
-while (divisor > 0)
-{
-int digit = n / divisor;
-_putchar(digit + '0');
-n %= divisor;
-divisor /= 10;
+divisor_print(n);
 }
 }
-}
-
-
