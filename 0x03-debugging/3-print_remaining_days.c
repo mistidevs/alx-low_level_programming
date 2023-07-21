@@ -20,16 +20,22 @@ if (month > 2 && day >= 60)
 {
 day++;
 }
-
-/*printf("THIS IS A LEAP YEAR!\n\n");*/
 printf("Day of the year: %d\n", day);
 printf("Remaining days: %d\n", 366 - day);
 }
 else
 {
-/*printf("THIS IS NOT LEAP YEAR!\n\n");*/
+if (month == 2 && day == 60)
+{
+/*Special case for centuries*/
+printf("Invalid date: %02d/%02d/%04d\n", month,
+day - 31, year);
+}
+else
+{
 printf("Day of the year: %d\n", day);
 printf("Remaining days: %d\n", 365 - day);
+}
 }
 }
 else
@@ -41,7 +47,6 @@ day - 31, year);
 }
 else
 {
-/*printf("THIS IS NOT LEAP YEAR!\n\n");*/
 printf("Day of the year: %d\n", day);
 printf("Remaining days: %d\n", 365 - day);
 }
