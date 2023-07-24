@@ -16,19 +16,20 @@ i = 0;
 
 while (i < n)
 {
-printf("%d", a[i]);
 if (i == n - 1)
 {
+printf("%d", a[i]);
 printf("\n");
 }
 else if (i < n)
 {
+printf("%d", a[i]);
 printf(", ");
 }
-else
+i++;
+}
+if (n == 0 || n < 0)
 {
 printf("\n");
-}
-i++;
 }
 }
