@@ -28,8 +28,8 @@ i++;
 }
 else
 {
-i = (len - 1) / 2;
-while (i < (len - 1))
+i = (len + 1) / 2;
+while (i <= (len - 1))
 {
 _putchar(str[i]);
 i++;
