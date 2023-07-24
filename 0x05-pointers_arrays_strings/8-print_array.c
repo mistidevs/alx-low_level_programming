@@ -21,9 +21,13 @@ if (i == n - 1)
 {
 printf("\n");
 }
-else
+else if (i < n)
 {
 printf(", ");
+}
+else
+{
+printf("\n");
 }
 i++;
 }
