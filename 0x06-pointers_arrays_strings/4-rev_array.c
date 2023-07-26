@@ -14,7 +14,7 @@ int i;
 int temp;
 i = 0;
 
-if (n % 2 != 0)
+if (n % 2 != 0 && n != 0)
 {
 	for (; i < n / 2 ; i++)
 	{
@@ -25,7 +25,7 @@ if (n % 2 != 0)
 	}
 }
 
-else if (n % 2 == 0)
+else if (n % 2 == 0 && n != 0)
 {
 	for (; i <= n / 2 ; i++)
 	{
@@ -34,6 +34,11 @@ else if (n % 2 == 0)
 		a[n - 1] = temp;
 		n--;
 	}
+}
+
+else
+{
+	return;
 }
 }
 
