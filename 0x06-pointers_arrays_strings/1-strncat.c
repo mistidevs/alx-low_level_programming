@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
-* strncat - concentate n bytes of src onto dest
+* _strncat - concentate n bytes of src onto dest
 * @dest: destination file
 * @src: source file
+* @n: number of bytes to concentanate
 *
 * Return: pointer to dest
 */
