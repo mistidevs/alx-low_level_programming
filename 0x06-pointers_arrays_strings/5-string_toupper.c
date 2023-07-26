@@ -18,7 +18,7 @@ for (n = 0 ; p[n] != '\0' ; n++)
 {
 	if (p[n] >= 'a' && p[n] <= 'z')
 	{
-		ascii = p[n] -32;
+		ascii = p[n] - 32;
 		upper = (char)ascii;
 		p[n] = upper;
 	}
