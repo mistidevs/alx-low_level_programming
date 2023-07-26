@@ -44,7 +44,7 @@ else
 	{
 		p++;
 	}
-	if (p == 0)
+	if (p == 0 || n <= 0)
 	{
 		return;
 	}
