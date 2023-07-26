@@ -16,13 +16,7 @@ int p;
 p = 0;
 i = 0;
 
-if (n <= 0)
-{
-	return;
-}
-
-
-else if (n % 2 != 0 && n != 0)
+if (n % 2 != 0 && n != 0)
 {
 	for (; i < n / 2 ; i++)
 	{
@@ -42,6 +36,11 @@ else if (n % 2 == 0 && n != 0)
 		a[n - 1] = temp;
 		n--;
 	}
+}
+
+else if (n <= 0)
+{
+	return;
 }
 
 }
