@@ -12,8 +12,6 @@ void reverse_array(int *a, int n)
 {
 int i;
 int temp;
-int p;
-p = 0;
 i = 0;
 
 if (n % 2 != 0 && n != 0)
@@ -36,6 +34,11 @@ else if (n % 2 == 0 && n != 0)
 		a[n - 1] = temp;
 		n--;
 	}
+}
+
+else
+{
+	return;
 }
 }
 
