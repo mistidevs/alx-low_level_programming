@@ -12,7 +12,6 @@ char *cap_string(char *p)
 int n;
 int ascii;
 char upper;
-int i;
 
 for (n = 0 ; p[n] != '\0' ; n++)
 {
