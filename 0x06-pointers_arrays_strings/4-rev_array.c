@@ -16,7 +16,7 @@ int p;
 p = 0;
 i = 0;
 
-if (a == 0 || n < 0)
+if (n <= 0)
 {
 	return;
 }
