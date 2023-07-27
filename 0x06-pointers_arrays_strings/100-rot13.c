@@ -22,6 +22,7 @@ for (i = 0 ; str[i] != '\0' ; i++)
 		if (str[i] == data1[j])
 		{
 			str[i] = datarot[j];
+			break;
 		}
 	}
 }
