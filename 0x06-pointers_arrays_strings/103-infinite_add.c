@@ -27,7 +27,7 @@ l2--;
 for (; i <= l1 || i <= l2 ; i++)
 {
 	num1 = num2 = 0;
-	if (i <= l1 && (l1 - i) >= 0)
+	if (i <= l1)
 		num1 = n1[l1 - i] - '0';
 	if (i <= l2 && (l2 - i) >= 0)
 		num2 = n2[l2 - i] - '0';
