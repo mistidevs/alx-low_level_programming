@@ -1,113 +1,56 @@
 #include "main.h"
 
-int _strlen(char *s)
-{
-int y;
-for (y = 0 ; *s != '\0' ; y++)
-{
-s++;
-}
-return (y);
-}
+/**
+* infinite_add - adds numbers of any range provided size_r
+* describes an array large enough to fit them
+* @n1: first number
+* @n2: second number
+* @r: array to hold the result
+* @size_r: size of the array to hold the result
+*
+* Return: pointer to sum of numbers
+*/
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int ind = 0;
-int carryover = 0;
-int i = 0;
-int j = 0;
-int len1 = _strlen(n1);
-int len2 = _strlen(n2);
-
-if (len1 < len2)
+int sum, l1, l2, tmpl, i, rl, num1, num2, carry;
+char tmp[10000];
+l1 = l2 = sum = i = rl = num1 = num2 = carry = 0;
+while (n1[l1] != '\0')
+	l1++;
+while (n2[l2] != '\0')
+	l2++;
+if (l1 + 2 > size_r || l2 + 2 > size_r)
+	return (0);
+l1--;
+l2--;
+for (; i <= l1 || i <= l2 ; i++)
 {
-for (i = len1 - 1; i >= 0; i--)
-{
-n1[i + len2 - len1] = n1[i];
-}
-for (i = 0; i < len2 - len1; i++)
-{
-n1[i] = '0';
-}
-n1[len2] = '\0';
-len1 = len2;
-}
-else if (len2 < len1)
-{
-for (j = len2 - 1; j >= 0; j--)
-{
-n2[j + len1 - len2] = n2[j];
-}
-for (j = 0; j < len1 - len2; j++)
-{
-n2[j] = '0';
-}
-n2[len1] = '\0';
-len2 = len1;
-}
-
-i = len1 - 1;
-j = len2 - 1;
-
-while (i >= 0 || j >= 0)
-{
-int digit1, digit2, sum;
-
-digit1 = n1[i] - '0';
-digit2 = n2[j] - '0';
-sum = digit1 + digit2 + carryover;
-
-if (sum > 9)
-{
-carryover = 1;
-sum -= 10;
-}
-else
-{
-carryover = 0;
-}
-
-if (ind < size_r - 1)
-{
-r[ind] = sum + '0';
-ind++;
-}
-else if (ind >= size_r)
-{
-char r[1];
-r[1] = '0';
-return (r);
-}
-
-i--;
-j--;
+	num1 = num2 = 0;
+	if (i <= l1 && (l1 - i) >= 0)
+		num1 = n1[l1 - i] - '0';
+	if (i <= l2 && (l2 - i) >= 0)
+		num2 = n2[l2 - i] - '0';
+	sum = num1 + num2 + carry;
+	if (sum > 9)
+		carry = 1, sum -= 10;
+	else
+		carry = 0;
+	r[i] = sum + '0', rl++;
 
 }
-
-
-
-if (carryover == 1)
+if (carry > 0)
+	r[i] = carry + '0', r[i + 1] = '\0';
+i = tmpl = 0;
+while (i <= rl)
+	tmp[i] = r[rl - i], tmpl++, i++;
+i = 0;
+while (i < tmpl)
 {
-
-if (ind < size_r - 1)
-{
-r[ind] = '1';
-ind++;
+	if (r[i] == '\0')
+		break;
+	r[i] = tmp[i];
+	i++;
 }
-else
-{
-return (0);
-}
-
-}
-
-for (i = ind - 1, j = 0; i > j; i--, j++)
-{
-char temp = r[i];
-r[i] = r[j];
-r[j] = temp;
-}
-r[ind] = '\0';
-
 return (r);
 }
