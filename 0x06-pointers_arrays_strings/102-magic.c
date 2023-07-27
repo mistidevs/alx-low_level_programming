@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-/**
-* main - altering one line of code
-*
-* Return: 0 if successful
-*/
-
 int main(void)
 {
 int n;
