@@ -21,8 +21,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		l2++;
 	if (l1 + 2 > size_r || l2 + 2 > size_r)
 		return (0);
-	l1--;
-	l2--;
+	l1--, l2--;
 	while (i <= l1 || i <= l2)
 	{
 		num1 = num2 = 0;
@@ -32,44 +31,24 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			num2 = n2[l2 - i] - '0';
 		sum = num1 + num2 + carry;
 		if (sum >= 10)
-		{
-			carry = 1;
-			sum -= 10;
-		}
+			carry = 1, sum -= 10;
 		else
 			carry = 0;
-		r[i] = sum + '0';
-		i++;
-		rl++;
+		r[i] = sum + '0', i++, rl++;
 	}
 	if (carry > 0)
-	{
-		r[i] = carry + '0';
-		r[i + 1] = '\0';
-	}
+		r[i] = carry + '0', r[i + 1] = '\0';
 	if (carry == 0)
 	{
 		k = i - 1;
 		while (j < k)
-		{
-			tmp = r[j];
-			r[j] = r[k];
-			r[k] = tmp;
-			j++;
-			k--;
-		}
+			tmp = r[j], r[j] = r[k], r[k] = tmp, j++, k--;
 	}
 	else
 	{
 		k = i;
 		while (j < k)
-		{
-			tmp = r[j];
-			r[j] = r[k];
-			r[k] = tmp;
-			j++;
-			k--;
-		}
+			tmp = r[j], r[j] = r[k], r[k] = tmp, j++, k--;
 	}
 	return (r);
 }
