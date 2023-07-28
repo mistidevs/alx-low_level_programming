@@ -47,7 +47,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[i] = carry + '0';
 		r[i + 1] = '\0';
 	}
-	if (rl == 2)
+	if (carry == 0)
 	{
 		k = i - 1;
 		while (j < k)
