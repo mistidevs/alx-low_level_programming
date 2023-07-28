@@ -44,9 +44,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (carry > 0)
 	{
-		if (i >= size_r)
-			return (0);
 		r[i] = carry + '0';
+		r[i + 1] = '\0';
 	}
 	i = tmpl = 0;
 	while (i <= rl)
