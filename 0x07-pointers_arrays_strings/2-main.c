@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-    char *s = "hello my name is Demistify inc.";
+    char *s = "";
     char *f;
 
     f = _strchr(s, '\0');
@@ -17,7 +17,7 @@ int main(void)
     {
         printf("%s\n", f);
     }
-    else
+    else if (f == NULL)
     {
         printf("Character not found\n");
     }
