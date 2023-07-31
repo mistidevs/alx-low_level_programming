@@ -15,7 +15,7 @@ int x;
 
 for (x = 0; p[x] != '\0'; x++)
 {
-        x++;
+	x++;
 }
 
 return (x);
@@ -23,7 +23,7 @@ return (x);
 
 /**
 * _strstr - Locating a substring
-* @haysatck: string to check for
+* @haystack: string to check for
 * @needle: substring to check for
 *
 * Return: pointer to start of substring or NULL
@@ -38,19 +38,19 @@ if (needle[_strlen(needle) - 1] != '\0')
 
 for (i = 0; haystack[i] != '\0'; i++)
 {
-        for (j = 0; needle[j] != '\0'; j++)
-        {
-                if (haystack[i] == needle[j])
-                {
-                        if (needle[j + 1] == '\0')
-                                return (&haystack[i - j]);
-                        else if (i - j >= _strlen(needle))
-                                return (NULL);
-                        else if (haystack[i + 1] != needle[j + 1]
-                        && needle[j + 1] != '\0')
-                                break;
-                }
-        }
+	for (j = 0; needle[j] != '\0'; j++)
+	{
+		if (haystack[i] == needle[j])
+		{
+			if (needle[j + 1] == '\0')
+				return (&haystack[i - j]);
+			else if (i - j >= _strlen(needle))
+				return (NULL);
+			else if (haystack[i + 1] != needle[j + 1]
+			&& needle[j + 1] != '\0')
+				break;
+		}
+	}
 }
 
 return (NULL);
