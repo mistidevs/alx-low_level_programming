@@ -1,5 +1,7 @@
 #include "main.h"
 
+#define NULL 0
+
 /**
 * _strpbrk - searches a string for any of a set of bytes
 * @s: string to check in
@@ -7,8 +9,6 @@
 *
 * Return: pointer to one of bytes in accept or NULL
 */
-
-#define NULL 0
 
 char *_strpbrk(char *s, char *accept)
 {
