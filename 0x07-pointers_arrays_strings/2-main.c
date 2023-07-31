@@ -11,7 +11,7 @@ int main(void)
     char *s = "hello my name is Demistify inc.";
     char *f;
 
-    f = _strchr(s, 'l');
+    f = _strchr(s, 'x');
 
     if (f != NULL)
     {
