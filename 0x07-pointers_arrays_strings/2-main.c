@@ -17,5 +17,9 @@ int main(void)
     {
         printf("%s\n", f);
     }
+    else
+    {
+        printf("Character not found\n");
+    }
     return (0);
 }
