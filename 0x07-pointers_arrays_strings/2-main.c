@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-    char *s = "";
+    char *s = "Hello, this is Demisstify incorporated.";
     char *f;
 
     f = _strchr(s, '\0');
