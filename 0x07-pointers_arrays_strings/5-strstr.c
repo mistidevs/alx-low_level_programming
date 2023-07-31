@@ -9,11 +9,12 @@
 * Return: length of string
 */
 
-int _strlen(char *p)
+unsigned int _strlen(char *p)
 {
 int x;
+x = 0;
 
-for (x = 0; p[x] != '\0'; x++)
+while (p[x] != '\0')
 {
 	x++;
 }
@@ -32,25 +33,33 @@ return (x);
 char *_strstr(char *haystack, char *needle)
 {
 int i, j;
+int haystack_len = _strlen(haystack);
+int needle_len = _strlen(needle);
 
-if (needle[_strlen(needle) - 1] != '\0')
-	return (NULL);
-
-for (i = 0; haystack[i] != '\0'; i++)
+if (haystack_len < needle_len)
 {
-	for (j = 0; needle[j] != '\0'; j++)
+	return (NULL);
+}
+if (haystack == NULL || needle == NULL)
+{
+	return (NULL);
+}
+
+for (i = 0; haystack[i] != '\0' && i <= haystack_len - needle_len; i++)
+{
+	for (j = 0; needle[j] != '\0' && haystack[i + j] == needle[j]; j++)
 	{
-		if (haystack[i] == needle[j])
+		if (j == needle_len - 1)
 		{
-			if (needle[j + 1] == '\0')
-				return (&haystack[i - j]);
-			else if (i - j >= _strlen(needle))
-				return (NULL);
-			else if (haystack[i + 1] != needle[j + 1]
-			&& needle[j + 1] != '\0')
-				break;
+			return (haystack + i);
 		}
 	}
+	if (j == needle_len)
+	{
+		break;
+	}
+
+
 }
 
 return (NULL);
