@@ -13,7 +13,7 @@ int x;
 
 for (x = 0; p[x] != '\0'; x++)
 {
-        x++;
+	x++;
 }
 
 return (x);
