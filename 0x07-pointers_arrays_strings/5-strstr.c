@@ -40,10 +40,13 @@ if (haystack_len < needle_len)
 {
 	return (NULL);
 }
-if (haystack == NULL || needle == NULL)
+if (haystack == NULL)
 {
 	return (NULL);
 }
+
+if (needle_len == 0)
+	return (&haystack[0]);
 
 for (i = 0; haystack[i] != '\0' && i <= haystack_len - needle_len; i++)
 {
