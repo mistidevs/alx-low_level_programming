@@ -16,7 +16,7 @@ if (*s == '\0')
 
 else
 {
-	return (1 + length(s+ 1));
+	return (1 + length(s + 1));
 }
 }
 
