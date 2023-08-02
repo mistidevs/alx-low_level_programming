@@ -1,6 +1,26 @@
 #include "main.h"
 
 /**
+* length - getting length of a string suing recursion
+* @s: string to get length of
+*
+* Return: length of the string
+*/
+
+int length(char *s)
+{
+if (*s == '\0')
+{
+	return (0);
+}
+
+else
+{
+	return (1 + length(s+ 1));
+}
+}
+
+/**
 * palindrome_helper - adding paramaters to check string
 * @s: string being checked
 * @left: value of left digit being checked
@@ -30,10 +50,8 @@ else
 
 int is_palindrome(char *s)
 {
-int len = 0;
-
-while (s[len] != '\0')
-	len++;
+int len;
+len = length(s);
 
 return (palindrome_helper(s, 0, len - 1));
 }
