@@ -5,7 +5,7 @@
 /**
 * main - adds all positive numbers
 * @argc: argument counter
-* @argv; argument vector
+* @argv: argument vector
 *
 * Return: 0 if successful
 *         1 if not
