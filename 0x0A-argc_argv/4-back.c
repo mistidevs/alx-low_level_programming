@@ -13,30 +13,30 @@
 
 int main(int argc, char *argv[])
 {
+char *endptr;
+long num;
 int i, sum;
 sum = 0;
+i = 0;
+num = strtol(argv[i], &endptr, 10);
 
 if (argc > 1)
 {
-	for (i = 1; i < argc; i++)
+	if (*endptr == '\0' && num > 0)
 	{
-		if (isdigit(argv[i][0]) && argv[i][0] >= '0' && argv[i][0] <= '9')
-		{
-			sum += atoi(argv[i]);
-		}
-		else
-		{
-			printf("Error\n");
-                        return (1);
-		}
-
+		sum += (int)num;
 	}
-	printf("%d\n", sum);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+        printf("%d\n", sum);
 }
 
 else
 {
-	printf("0\n");
+        printf("0\n");
 }
 
 return (0);
