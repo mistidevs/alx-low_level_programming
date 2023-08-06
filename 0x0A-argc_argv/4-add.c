@@ -20,7 +20,12 @@ if (argc > 1)
 {
 	for (i = 1; i < argc; i++)
 	{
-		if (isdigit(argv[i][0]) && argv[i][0] >= '0' && argv[i][0] <= '9')
+		if (!(argv[i][1] = '0' && argv[i][1] <= '9'))
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else if (isdigit(argv[i][0]) && argv[i][0] >= '0' && argv[i][0] <= '9')
 		{
 			sum += atoi(argv[i]);
 		}
