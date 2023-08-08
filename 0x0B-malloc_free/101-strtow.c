@@ -1,57 +1,101 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 /**
-* strtow - splitting a string into words
-* @str: string to split
-*
-* Return: pointer to an array of strings
-*/
+ * count_words - Counts the number of words in a string
+ * @str: The string to count
+ *
+ * Return: The number of words, or 0 if str is NULL or empty
+ */
+int count_words(char *str)
+{
+int i, count, in_word;
 
+if (str == NULL || str[0] == '\0')
+	return (0);
+
+in_word = 0;
+count = 0;
+for (i = 0; str[i] != '\0'; i++)
+{
+	if (str[i] == ' ')
+		in_word = 0;
+	else if (in_word == 0)
+	{
+		in_word = 1;
+		count++;
+	}
+}
+
+return (count);
+}
+
+/**
+ * copy_word - Copies a word from a string to a new string
+ * @str: The source string
+ * @start: The starting index of the word
+ * @end: The ending index of the word
+ *
+ * Return: A pointer to the new string, or NULL on failure
+ */
+char *copy_word(char *str, int start, int end)
+{
+char *word;
+int i, j;
+
+word = malloc(sizeof(char) * (end - start + 2));
+if (word == NULL)
+	return (NULL);
+
+j = 0;
+for (i = start; i <= end; i++)
+{
+	word[j] = str[i];
+	j++;
+}
+word[j] = '\0';
+return (word);
+}
+
+/**
+ * strtow - Splits a string into words
+ * @str: The string to split
+ *
+ * Return: A pointer to an array of strings (words), or NULL on failure
+ */
 char **strtow(char *str)
 {
-int i, j, word_len;
-char *token, **tab;
-char *dup_str;
-char *tmp;
+char **tab;
+int i, j, k, n_words, start, end;
 
-if (str == NULL || *str == '\0')
+n_words = count_words(str);
+if (n_words == 0)
 	return (NULL);
 
-dup_str = strdup(str);
-if (dup_str == NULL)
-	return (NULL);
-
-tab = malloc(sizeof(char *) * (1 + strcspn(dup_str, " \t\n")));
+tab = malloc(sizeof(char *) * (n_words + 1));
 if (tab == NULL)
-{
-	free(dup_str);
 	return (NULL);
-}
+
+k = 0;
 i = 0;
-token = strtok_r(dup_str, " \t\n", &tmp);
-while (token != NULL)
+while (k < n_words)
 {
-	word_len = strlen(token);
-	tab[i] = malloc(sizeof(char) * (word_len + 1));
-	if (tab[i] == NULL)
+	while (str[i] == ' ')
+		i++;
+	start = i;
+	while (str[i] != ' ' && str[i] != '\0')
+		i++;
+	end = i - 1;
+	tab[k] = copy_word(str, start, end);
+	if (tab[k] == NULL)
 	{
-		for (j = 0; j < i; j++)
-		{
+		for (j = 0; j < k; j++)
 			free(tab[j]);
-		}
 		free(tab);
-		free(dup_str);
 		return (NULL);
 	}
-	strcpy(tab[i], token);
-	i++;
-	token = strtok_r(NULL, " \t\n", &tmp);
+	k++;
 }
-
-tab[i] = NULL;
-free(dup_str);
+tab[k] = NULL;
 return (tab);
 }
