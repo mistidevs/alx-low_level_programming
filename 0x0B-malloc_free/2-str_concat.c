@@ -16,22 +16,26 @@ int len1, len2, len, i, j;
 char *cat;
 len1 = len2 = len = i = j = 0;
 
-if (s1 == NULL && s2 == NULL)
-	return (NULL);
+if (s1 != NULL)
+	while (s1[len1] != '\0')
+	{
+		len1++;
+	}
 
-
-while (s1[len1] != '\0')
-	len1++;
-
-while (s2[len2] != '\0')
-	len2++;
+if (s2 != NULL)
+	while (s2[len2] != '\0')
+	{
+		len2++;
+	}
 
 len = len1 + len2;
 
-cat = malloc((sizeof(char) * len) + 1);
+cat = malloc(sizeof(char) * len + 1);
 
 if (cat == NULL)
+{
 	return (NULL);
+}
 
 while (i < len1)
 {
@@ -42,8 +46,7 @@ while (i < len1)
 while (i < len)
 {
 	cat[i] = s2[j];
-	i++;
-	j++;
+	i++, j++;
 }
 
 cat[i] = '\0';
