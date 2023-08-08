@@ -15,6 +15,7 @@ char **strtow(char *str)
 int i, j, word_len;
 char *token, **tab;
 char *dup_str;
+char *tmp;
 
 if (str == NULL || *str == '\0')
 	return (NULL);
@@ -30,7 +31,7 @@ if (tab == NULL)
 	return (NULL);
 }
 i = 0;
-token = strtok(dup_str, " \t\n");
+token = strtok_r(dup_str, " \t\n", &tmp);
 while (token != NULL)
 {
 	word_len = strlen(token);
@@ -47,7 +48,7 @@ while (token != NULL)
 	}
 	strcpy(tab[i], token);
 	i++;
-	token = strtok(NULL, " \t\n");
+	token = strtok_r(NULL, " \t\n", &tmp);
 }
 
 tab[i] = NULL;
