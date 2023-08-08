@@ -16,7 +16,7 @@ int len1, len2, len, i, j;
 char *cat;
 len1 = len2 = len = i = j = 0;
 
-if (s1 == NULL || s2 == NULL)
+if (s1 == NULL && s2 == NULL)
 	return (NULL);
 
 
@@ -28,7 +28,7 @@ while (s2[len2] != '\0')
 
 len = len1 + len2;
 
-cat = malloc(sizeof(char) * len);
+cat = malloc((sizeof(char) * len) + 1);
 
 if (cat == NULL)
 	return (NULL);

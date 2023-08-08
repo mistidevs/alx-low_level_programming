@@ -6,7 +6,7 @@
 * _strdup - copying a sttring and returning a pointer to the duplicate
 * @str: sttring to duplicate
 *
-* Return; pointer to duplicate or NULL
+* Return: pointer to duplicate or NULL
 */
 
 char *_strdup(char *str)
@@ -27,7 +27,7 @@ while (str[len] != '\0')
 	len++;
 }
 
-st = malloc(sizeof(char) * len);
+st = malloc((sizeof(char) * len) + 1);
 
 if (st == NULL)
 {
