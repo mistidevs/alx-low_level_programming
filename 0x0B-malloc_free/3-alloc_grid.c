@@ -29,14 +29,14 @@ for (i = 0; i < height; i++)
 		{
 			free(arr[j]);
 		}
-		free (arr);
+		free(arr);
 		return (NULL);
 	}
 }
 
 for (i = 0; i < height; i++)
 {
-	for (j= 0; j < width; j++)
+	for (j = 0; j < width; j++)
 	{
 		arr[i][j] = 0;
 	}
