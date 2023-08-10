@@ -23,7 +23,7 @@ arr = malloc(nmemb * size);
 if (arr == NULL)
 	return (NULL);
 
-for (i = 0; i < nmemb; i++)
+for (i = 0; i < nmemb * size; i++)
 	arr[i] = 0;
 
 return (arr);
