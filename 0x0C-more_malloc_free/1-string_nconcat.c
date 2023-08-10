@@ -1,30 +1,30 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 #include <string.h>
 
 /**
-* string_nconcat - concetenating two strings with n bytes of s2
+* string_nconcat - concatenates two strings
 * @s1: first string
 * @s2: second string
-* @n: number of bytes of s2 to concatenate
+* @n: number of s2 bytes to copy
 *
-* Return: pointer to allocated space or NULL if it fails
+* Return: pointer to a string or NULL if it fails
 */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *s;
 unsigned int len, len1, len2, i, j;
-len1 = len2 = 0;
-if (s1 != NULL)
-	len1 = strlen(s1);
-else
-	len1 = 0;
-if (s2 != NULL)
-	len2 = strlen(s2);
-else
-	len2 = 0;
+
+if (s1 == NULL)
+	s1 = "";
+if (s2 == NULL)
+	s2 = "";
+
+len1 = strlen(s1);
+len2 = strlen(s2);
+
 if (n >= len2)
 {
 	len = len1 + len2;
