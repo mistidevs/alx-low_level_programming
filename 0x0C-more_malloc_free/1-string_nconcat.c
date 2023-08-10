@@ -24,7 +24,6 @@ if (s1 != NULL)
 }
 else
 	len1 = 0;
-
 if (s2 != NULL)
 {
 	while (s2[len2] != '\0')
@@ -32,7 +31,6 @@ if (s2 != NULL)
 }
 else
 	len2 = 0;
-
 if (n >= len2)
 {
 	len = len1 + len2;
