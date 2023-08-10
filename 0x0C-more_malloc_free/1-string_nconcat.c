@@ -27,31 +27,17 @@ len2 = strlen(s2);
 
 if (n >= len2)
 {
-	len = len1 + len2;
-	s = malloc(sizeof(char) * len + 1);
+	n = len2;
+	s = malloc(sizeof(char) * (len1 + n + 1));
 	if (s == NULL)
 		return (NULL);
 }
-else
-{
-	len = len1 + n;
-	s = malloc(sizeof(char) * len + 1);
-	if (s == NULL)
-		return (NULL);
-}
+
 for (i = 0; i < len1; i++)
 	s[i] = s1[i];
-if (n < len2)
-{
-	for (j = 0; j < n; j++)
-		s[i + j] = s2[j];
-	s[i + j] = '\0';
-}
-else
-{
-	for (j = 0; j < len2; j++)
-		s[i + j] = s2[j];
-}
+for (j = 0; j < n; j++, i++)
+	s[i] = s2[j];
+s[i] = '\0';
 
 return (s);
 }
