@@ -31,6 +31,7 @@ if (ptr == NULL && new_size != 0)
 if (new_size > old_size)
 {
 	void *tmp = malloc(new_size);
+
 	if (tmp == NULL)
 		return (NULL);
 	memcpy(tmp, ptr, old_size);
@@ -41,6 +42,7 @@ if (new_size > old_size)
 else if (new_size < old_size)
 {
 	void *tmp = malloc(new_size);
+
 	if (tmp == NULL)
 		return (NULL);
 	memcpy(tmp, ptr, new_size);
