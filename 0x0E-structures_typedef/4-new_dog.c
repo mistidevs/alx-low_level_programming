@@ -36,7 +36,7 @@ if (new_dog->owner == NULL)
 }
 
 new_dog->age = age;
-if (new_dog->age <= -1)
+if (new_dog->age == -1)
 {
 	free(new_dog->name);
 	free(new_dog->owner);
