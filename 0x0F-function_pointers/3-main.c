@@ -19,20 +19,21 @@ int result;
 
 if (argc != 4)
 {
-        printf("Error\n");
-        exit(98);
+	printf("Error\n");
+	exit(98);
 }
 
-if (argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*' && argv[2][0] != '/' && argv[2][0] != '%')
+if (argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*' &&
+argv[2][0] != '/' && argv[2][0] != '%')
 {
-        printf("Error\n");
-        exit(99);
+	printf("Error\n");
+	exit(99);
 }
 
 if ((argv[2][0] == '/' || argv[2][0] == '%') && atoi(argv[3]) == 0)
 {
-        printf("Error\n");
-        exit(100);
+	printf("Error\n");
+	exit(100);
 }
 
 result = get_op_func(argv[2])(num1, num2);
