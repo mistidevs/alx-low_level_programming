@@ -28,7 +28,7 @@ if (bytes < 0)
 }
 
 void *main_address = &main;
-unsigned char *opcodes = (unsigned char*)main_address;
+unsigned char *opcodes = (unsigned char *)main_address;
 
 for (i = 0; i < bytes; i++)
 {
