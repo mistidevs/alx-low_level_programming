@@ -29,7 +29,7 @@ for (i = 0; i < n; i++)
 	printf("%d", number);
 	if (i < n - 1)
 	{
-		if (separator != NULL)
+		if (separator != NULL && separator[0] != '\0')
 			printf("%s", separator);
 	}
 	else
