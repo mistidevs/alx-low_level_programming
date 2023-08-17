@@ -27,14 +27,11 @@ for (i = 0; i < n; i++)
 {
 	number = va_arg(am, int);
 	printf("%d", number);
-	if (i < n - 1)
-	{
-		if (separator != NULL && separator[0] != '\0')
-			printf("%s", separator);
-	}
-	else
-		printf("\n");
+	if (i != (n - 1) && separator != NULL)
+		printf("%s", separator);
 }
+
+printf("\n");
 
 va_end(am);
 }
