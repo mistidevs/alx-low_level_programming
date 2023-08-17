@@ -30,7 +30,7 @@ for (i = 0; i < n; i++)
 		printf("(nil)");
 	else
 		printf("%s", string);
-	if (i != (n - 1) && separator != NULL)
+	if (i != (n - 1) && separator != NULL && *separator != '\0')
 		printf("%s", separator);
 }
 
