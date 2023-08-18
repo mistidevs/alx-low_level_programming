@@ -54,7 +54,8 @@ va_list ar;
 char arr[4] = {'c', 'i', 'f', 's'}, *s;
 i = j = 0;
 va_start(ar, format);
-
+if (format)
+{
 while (format[i] != '\0')
 {
 	switch (format[i])
@@ -70,16 +71,13 @@ while (format[i] != '\0')
 			break;
 		case 's':
 			s = va_arg(ar, char *);
-			if (s == NULL)
-			{
-				printf("(nil)");
-				break;
-			}
+			if (!s)
+				s = "(nil)";
 			printf("%s", s);
 			break;
 		default:
 			break;
-	}
+		}
 	while (j < 4)
 	{
 		if (format[i] == arr[j] && format[i + 1] != '\0')
@@ -87,6 +85,7 @@ while (format[i] != '\0')
 		j++;
 	}
 	i++, j = 0;
+}
 }
 printf("\n"), va_end(ar);
 }
