@@ -22,7 +22,7 @@ if (*head == NULL)
 
 current = malloc(sizeof(list_t));
 if (current == NULL)
-        return (NULL);
+	return (NULL);
 
 
 current->str = strdup(str);
