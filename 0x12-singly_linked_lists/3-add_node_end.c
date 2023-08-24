@@ -1,5 +1,8 @@
 #include "lists.h"
 
+void *check_str(list_t **head);
+void *check_str_node(list_t *current);
+
 /**
 * add_node_end - adding node at end of list_t list
 * @head: pointer to pointer to first node
@@ -22,11 +25,8 @@ if (*head == NULL)
 	if (*head == NULL)
 		return (NULL);
 	(*head)->str = strdup(str);
-	if ((*head)->str == NULL)
-	{
-		free(*head);
+	if (check_str(head) == NULL)
 		return (NULL);
-	}
 	if (str == s)
 		(*head)->len = 0;
 	else
@@ -34,11 +34,9 @@ if (*head == NULL)
 	(*head)->next = NULL;
 	return (*head);
 }
-
 current = *head;
 while (current->next != NULL)
 	current = current->next;
-
 current->next = malloc(sizeof(list_t));
 if (current->next == NULL)
 	return (NULL);
@@ -55,5 +53,23 @@ else
 	current->len = strlen(str);
 current->next = NULL;
 return (current);
+}
+
+/**
+* check_str - check if strdup returns NULL
+* @head: pointer to pointer to adress of first node
+*
+* Return: NULL or 0
+*/
+
+void *check_str(list_t **head)
+{
+if ((*head)->str == NULL)
+{
+	free(*head);
+	return (NULL);
+}
+
+return (0);
 }
 
