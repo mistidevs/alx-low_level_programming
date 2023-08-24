@@ -13,16 +13,19 @@
 
 void print_all(const char * const format, ...)
 {
-int i, j;
+int i;
 va_list ar;
-char *s, *str;
-i = j = 0;
+char *s;
+char *str;
+
+s = "";
 va_start(ar, format);
+
 if (format)
 {
-	while (format[i] != '\0')
+	while (*format)
 	{
-		switch (format[i])
+		switch (*format)
 		{
 			case 'c':
 				printf("%s%c", s, va_arg(ar, int));
@@ -43,8 +46,9 @@ if (format)
 				break;
 		}
 		s = ", ";
-		i++, j = 0;
+		i++;
 	}
 }
-printf("\n"), va_end(ar);
+va_end(ar);
+printf("\n");
 }
