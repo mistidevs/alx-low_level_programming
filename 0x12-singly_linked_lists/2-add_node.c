@@ -15,7 +15,11 @@ list_t *current;
 if (*head == NULL)
 {
 	*head = malloc(sizeof(list_t));
+	if (*head == NULL)
+		return (NULL);
 	(*head)->str = strdup(str);
+	if ((*head)->str == NULL)
+		return (NULL);
 	(*head)->len = strlen(str);
 	(*head)->next = NULL;
 }
@@ -26,6 +30,8 @@ if (current == NULL)
 
 
 current->str = strdup(str);
+if (current->str == NULL)
+	return (NULL);
 current->len = strlen(str);
 current->next = *head;
 *head = current;
