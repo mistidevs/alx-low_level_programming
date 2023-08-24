@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * add_node - adds node to a singly linked list
- * @head: the pointer to the pointer to the head of the list
- * @str: string to set *str in the node to
- *
- * Return: pointer to new node
- */
+* add_node_end - adding node at end of list_t list
+* @head: pointer to pointer to first node
+* @str: str to set node to
+*
+* Return: pointer to node
+*/
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 list_t *current;
 char *s;
@@ -34,9 +34,15 @@ if (*head == NULL)
 	(*head)->next = NULL;
 	return (*head);
 }
-current = malloc(sizeof(list_t));
-if (current == NULL)
+
+current = *head;
+while (current->next != NULL)
+	current = current->next;
+
+current->next = malloc(sizeof(list_t));
+if (current->next == NULL)
 	return (NULL);
+current = current->next;
 current->str = strdup(str);
 if (current->str == NULL)
 {
@@ -47,8 +53,7 @@ if (str == s)
 	current->len = 0;
 else
 	current->len = strlen(str);
-current->next = *head;
-*head = current;
-
+current->next = NULL;
 return (current);
 }
+
