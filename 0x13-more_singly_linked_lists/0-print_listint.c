@@ -17,10 +17,7 @@ count = 0;
 
 while (current != NULL)
 {
-	if (!(current->n))
-		printf("(nil)\n"), count++;
-	else
-		printf("%d\n", current->n), count++;
+	printf("%d\n", current->n), count++;
 	current = current->next;
 }
 
