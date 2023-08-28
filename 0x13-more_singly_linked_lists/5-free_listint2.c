@@ -2,7 +2,7 @@
 
 /**
 * free_listint2 - free a list and set head to NULL
-* @head: pointer to first node of the list
+* @head: pointer to pointer to first node of the list
 *
 * Return: void
 */
