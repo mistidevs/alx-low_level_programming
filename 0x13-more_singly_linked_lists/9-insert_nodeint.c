@@ -42,7 +42,7 @@ for (count = 0; count < (idx - 1); count++)
 node_prev = current;
 current = current->next;
 new_node = malloc(sizeof(listint_t));
-if (current == NULL)
+if (new_node == NULL)
 	return (NULL);
 
 new_node->n = n;
