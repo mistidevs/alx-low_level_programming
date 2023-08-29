@@ -24,7 +24,7 @@ if (idx == 0)
 		return (NULL);
 	new_node->n = n;
 	new_node->next = *head;
-	*head = current;
+	*head = new_node;
 }
 
 count = 0;
