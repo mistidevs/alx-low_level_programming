@@ -22,9 +22,11 @@ if (idx == 0)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->n = n;
-	new_node->next = *head;
-	*head = new_node;
-}
+	if (*head != NULL)
+		new_node->next = *head;
+	else
+		new_node->next = NULL;
+	*head = new_node; }
 count = 0;
 current = *head;
 while (current != NULL)
@@ -32,20 +34,17 @@ while (current != NULL)
 
 if (idx > count)
 	return (NULL);
-
 current = *head;
 for (count = 0; count < (idx - 1); count++)
 {
 	if (current == NULL)
 		return (NULL);
-	current = current->next;
-}
+	current = current->next; }
 node_prev = current;
 current = current->next;
 new_node = malloc(sizeof(listint_t));
 if (new_node == NULL)
 	return (NULL);
-
 new_node->n = n;
 new_node->next = current;
 node_prev->next = new_node;
