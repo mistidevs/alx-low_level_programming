@@ -1,5 +1,5 @@
 #include "main.h"
-#define SIZE (sizeof(int) * CHAR_BIT)
+#define SIZE (sizeof(unsigned long int) * CHAR_BIT)
 
 /**
 * print_binary - printing a number in binary using bitwise operators
