@@ -2,7 +2,7 @@
 #define SIZE (sizeof(unsigned long int) * CHAR_BIT)
 
 /**
-* set_bit - sets the bit at an index to 1
+* clear_bit - sets the bit at an index to 1
 * @n: pointer to unsigned long integer
 * @index: index to set value of bit to 1
 *
