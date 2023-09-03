@@ -34,5 +34,6 @@ int main(void)
     add_nodeint(&head, 402);
     add_nodeint(&head, 1024);
     print_listint_safe(head);
+    print_listint_safe(NULL);
     return (0);
 }
