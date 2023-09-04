@@ -50,7 +50,7 @@ if (file1 == NULL || fd1 == -1)
 	dprintf(2, "Error: Can't read from file %s\n", file1);
 	exit(98);
 }
-while ((fr1 = read(fd1, &buffer, 1024)) > 1)
+while ((fr1 = read(fd1, &buffer, 1024)) > 0)
 {
 	fw2 = write(fd2, buffer, fr1);
 	if (fw2 != fr1)
@@ -67,13 +67,13 @@ if (fr1 == -1)
 fc1 = close(fd1);
 if (fc1 == -1)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fc1);
+	dprintf(2, "Error: Can't close fd %d\n", fd1);
 	exit(100);
 }
 fc2 = close(fd2);
 if (fc2 == -1)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fc2);
+	dprintf(2, "Error: Can't close fd %d\n", fd2);
 	exit(100);
 }
 
