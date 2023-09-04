@@ -34,10 +34,10 @@ if (*fd2 == -1)
 * @file1: pointer to pull text from
 * @file2: pointer to place text in
 *
-* Return: different values
+* Return: void
 */
 
-int cp(const char *file1, const char *file2)
+void cp(const char *file1, const char *file2)
 {
 int fd1, fd2, fr1, fw2, fc1, fc2;
 char buffer[1024];
@@ -76,8 +76,6 @@ if (fc2 == -1)
 	dprintf(2, "Error: Can't close fd %d\n", fd2);
 	exit(100);
 }
-
-return (0);
 }
 
 
@@ -99,8 +97,7 @@ if (ac != 3)
 	exit(97);
 }
 
-res = cp(av[1], av[2]);
-dprintf(1, "-> %i)\n", res);
+cp(av[1], av[2]);
 
 return (0);
 }
