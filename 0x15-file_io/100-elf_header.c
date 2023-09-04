@@ -101,11 +101,13 @@ void print_magic(unsigned char *e_ident)
 int i;
 
 for (i = 0; i < EI_NIDENT; i++)
+{
 	printf("%02x", e_ident[i]);
-if i == EI_NIDENT - 1)
-	printf("\n");
-else
-	printf("");
+	if (i == EI_NIDENT - 1)
+		printf("\n");
+	else
+		printf(" ");
+
 }
 
 /**
@@ -120,10 +122,13 @@ switch (class)
 {
 	case ELFCLASSNONE:
 		return ("none");
+		break;
 	case ELFCLASS32:
 		return ("ELF32");
+		break;
 	case ELFCLASS64:
 		return ("ELF64");
+		break;
 	default:
 		return ("<unknown>");
 }
