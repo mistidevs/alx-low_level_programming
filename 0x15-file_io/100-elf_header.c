@@ -70,7 +70,7 @@ return (0);
 /**
  * display_header - Displays the information contained in the ELF header
  * @e_ident: The ELF identification bytes
- * @header: The ELF header structure
+ * @edhr: The ELF header structure
  */
 
 void display_header(unsigned char *e_ident, Elf64_Ehdr *edhr)
