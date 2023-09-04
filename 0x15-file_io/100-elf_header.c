@@ -28,17 +28,17 @@ Elf64_Ehdr edhr;
 unsigned char e_ident[EI_NIDENT];
 if (ac != 2)
 {
-	dprintf(2, "Usage: %s elf file\n", av[0]);
+	dprintf(STDERR_FILENO, "Usage: %s elf file\n", av[0]);
 	exit(98); }
 fd = open(av[1], O_RDONLY);
 if (fd == -1)
 {
-	dprintf(2, "Can't open %s\n", av[1]);
+	dprintf(STDERR_FILENO, "Can't open %s\n", av[1]);
 	exit(98); }
 nread = read(fd, e_ident, EI_NIDENT);
 if (nread != EI_NIDENT)
 {
-	dprintf(2, "Can't read %s\n", av[1]);
+	dprintf(STDERR_FILENO, "Can't read %s\n", av[1]);
 	exit(98);
 }
 if (e_ident[EI_MAG0] != ELFMAG0 ||
@@ -46,22 +46,22 @@ if (e_ident[EI_MAG0] != ELFMAG0 ||
 	e_ident[EI_MAG2] != ELFMAG2 ||
 	e_ident[EI_MAG3] != ELFMAG3)
 {
-	dprintf(2, "Error: Not an ELF file");
+	dprintf(STDERR_FILENO, "Error: Not an ELF file");
 	exit(98);
 }
 if (lseek(fd, 0, SEEK_SET) == -1)
 {
-	dprintf(2, "Not able to lseek %s\n", av[1]);
+	dprintf(STDERR_FILENO, "Not able to lseek %s\n", av[1]);
 	exit(98); }
 nread = read(fd, &edhr, sizeof(edhr));
 if (nread != sizeof(edhr))
 {
-	dprintf(2, "Can't read %s\n", av[1]);
+	dprintf(STDERR_FILENO, "Can't read %s\n", av[1]);
 	exit(98); }
 fc = close(fd);
 if (fc == -1)
 {
-	dprintf(2, "Error Closing %s\n", av[1]);
+	dprintf(STDERR_FILENO, "Error Closing %s\n", av[1]);
 	exit(98); }
 display_header(e_ident, &edhr);
 return (0);
