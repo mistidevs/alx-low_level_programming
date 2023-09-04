@@ -3,7 +3,7 @@
 /**
 * create_file - creating a file with custom permissions
 * @filename: pointer to file name
-* @text_content - pointer to text content
+* @text_content: pointer to text content
 *
 * Return: 1 on success or -1 on failure
 */
