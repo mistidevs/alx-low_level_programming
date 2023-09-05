@@ -61,8 +61,8 @@ while ((fr1 = read(fd1, &buffer, 1024)) > 0)
 }
 if (fr1 == -1)
 {
-	dprintf(2, "Error: Can't read from file %s\n", file1);
 	exit(98);
+	dprintf(2, "Error: Can't read from file %s\n", file1);
 }
 fc1 = close(fd1);
 if (fc1 == -1)
@@ -91,7 +91,7 @@ int main(int ac, char **av)
 {
 if (ac != 3)
 {
-	dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+	dprintf(2, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 
