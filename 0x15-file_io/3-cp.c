@@ -17,13 +17,13 @@ if (*fd2 == -1)
 		*fd2 = open(file2, O_WRONLY | O_TRUNC);
 		if (*fd2 == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", file2);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 			exit(99);
 		}
 	}
 	else
 	{
-		dprintf(2, "Error: Can't write to %s\n", file2);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 		exit(99);
 	}
 }
@@ -47,7 +47,7 @@ handle_fd2_open(&fd2, file2);
 fd1 = open(file1, O_RDONLY);
 if (file1 == NULL || fd1 == -1)
 {
-	dprintf(2, "Error: Can't read from file %s\n", file1);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 	exit(98);
 }
 while ((fr1 = read(fd1, &buffer, 1024)) > 0)
@@ -55,25 +55,25 @@ while ((fr1 = read(fd1, &buffer, 1024)) > 0)
 	fw2 = write(fd2, buffer, fr1);
 	if (fw2 != fr1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file2);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 		exit(99);
 	}
 }
 if (fr1 == -1)
 {
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 	exit(98);
-	dprintf(2, "Error: Can't read from file %s\n", file1);
 }
 fc1 = close(fd1);
 if (fc1 == -1)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fd1);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
 	exit(100);
 }
 fc2 = close(fd2);
 if (fc2 == -1)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fd2);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 	exit(100);
 }
 }
@@ -91,7 +91,7 @@ int main(int ac, char **av)
 {
 if (ac != 3)
 {
-	dprintf(2, "Usage: cp file_from file_to\n");
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 
