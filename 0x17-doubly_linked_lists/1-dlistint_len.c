@@ -19,8 +19,8 @@ count = 0;
 curr = (dlistint_t *)h;
 while (curr != NULL)
 {
-        curr = curr->next;
-        count++;
+	curr = curr->next;
+	count++;
 }
 
 return (count);
