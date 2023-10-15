@@ -14,7 +14,10 @@ char *arr[1024];
 int flag = 0;
 
 if (head == NULL)
+{
+	printf("0\n");
 	exit(98);
+}
 
 while (head != NULL)
 {
