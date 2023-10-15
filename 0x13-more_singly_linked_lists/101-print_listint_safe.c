@@ -9,37 +9,35 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-size_t count = 0;
-hash_table_t *ht = NULL;
+size_t count = 0, i = 0;
+char *arr[100];
+int flag = 0;
 
 if (head == NULL)
-{
-	printf("0\n");
 	exit(98);
-}
-
-ht = hash_table_create(1024);
-if (ht == NULL)
-{
-	printf("Error: could not create hash table\n");
-	exit(98);
-}
 
 while (head != NULL)
 {
-	printf("[%p] %d\n", (void *)head, head->n);
-	count++;
-
-	if (hash_table_get(ht, (char *)head) != NULL)
+	i = 0;
+	while (i < count)
 	{
-		printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-    		break;
+		if ((char *)head == arr[i])
+		{
+			printf("-> [%p] %d\n", (void *)head, head->n);
+			flag = 1;
+    			break;
+		}
+		i++;
 	}
-
-	hash_table_set(ht, (char *)head, (char *)head);
+	if (flag)
+	{
+		break;
+	}
+	printf("[%p] %d\n", (void *)head, head->n);
+	arr[i] = (char *)head;
 	head = head->next;
+	count++;
 }
 
-hash_table_delete(ht);
 return (count);
 }
