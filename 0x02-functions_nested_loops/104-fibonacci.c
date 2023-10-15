@@ -3,7 +3,7 @@
 /**
 * main - First 98 fibonacci numbers
 *
-Rw*
+*
 * Return: 0 if successful
 */
 
@@ -18,17 +18,20 @@ o = 1;
 q = 0;
 while (p < 98)
 {
-q = n + o;
-n = o;
-o = q;
-printf("%lu", q);
-if (p < 97)
-{
-printf(", ");
+	q = n + o;
+	n = o;
+	o = q;
+	printf("%lu", q);
+	if (p != 97)
+	{
+		printf(", ");
+	}
+	else
+	{
+		printf("\n");
+	}
+	p++;
 }
-p++;
-}
-putchar('\n');
 
 return (0);
 }
