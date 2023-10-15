@@ -9,6 +9,36 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-size_t count;
+size_t count = 0, i = 0;
+char *arr[1024];
+int flag = 0;
+listint_t *curr, *next;
 
+if (h == NULL || *h == NULL)
+	return (0);
+
+curr = *h;
+*h = NULL;
+while (curr != NULL)
+{
+	i = 0;
+	next = curr->next;
+	while (i < count)
+	{
+		if ((char *)h == arr[i])
+		{
+			flag = 1;
+			break;
+		}
+		i++;
+	}
+	if (flag)
+		break;
+	free(curr);
+	curr = next;
+	arr[count] = (char *)h;
+	count++;
+}
+
+return (count);
 }
