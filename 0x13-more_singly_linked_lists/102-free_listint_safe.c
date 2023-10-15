@@ -25,7 +25,7 @@ while (curr != NULL)
 	next = curr->next;
 	while (i < count)
 	{
-		if ((char *)h == arr[i])
+		if ((char *)curr == arr[i])
 		{
 			flag = 1;
 			break;
@@ -34,9 +34,9 @@ while (curr != NULL)
 	}
 	if (flag)
 		break;
+	arr[count] = (char *)curr;
 	free(curr);
 	curr = next;
-	arr[count] = (char *)h;
 	count++;
 }
 
