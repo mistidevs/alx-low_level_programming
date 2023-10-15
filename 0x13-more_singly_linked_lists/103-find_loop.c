@@ -18,10 +18,11 @@ while (slow != NULL && fast != NULL)
 	fast = fast->next->next;
 	if (slow == fast)
 	{
-		while (slow != NULL && head != NULL)
+		while (slow != NULL && fast != NULL)
 		{
 			head = head->next;
 			slow = slow->next;
+			fast = fast->next;
 			if (head == slow)
 				return (head);
 		}
