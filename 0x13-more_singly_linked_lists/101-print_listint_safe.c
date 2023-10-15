@@ -10,7 +10,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 size_t count = 0, i = 0;
-char *arr[100];
+char *arr[1024];
 int flag = 0;
 
 if (head == NULL)
@@ -25,7 +25,7 @@ while (head != NULL)
 		{
 			printf("-> [%p] %d\n", (void *)head, head->n);
 			flag = 1;
-    			break;
+			break;
 		}
 		i++;
 	}
