@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -q -O /tmp/winwin.so https://github.com/ermiasbahru/alx-low_level_programming/raw/master/0x18-dynamic_libraries/winwin.so
-export LD_PRELOAD=/tmp/winwin.so
+wget -q -O /tmp/libtest.so https://github.com/MitaliSengupta/holbertonschool-low_level_programming/raw/master/0x17-dynamic_libraries/libtest.so
+export LD_PRELOAD=/tmp/libtest.so
