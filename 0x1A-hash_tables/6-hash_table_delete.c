@@ -15,23 +15,18 @@ unsigned long int i;
 if (ht == NULL)
 	exit(EXIT_SUCCESS);
 
-while (i < ht->size)
+for (i = 0; i < ht->size; i++)
 {
-	if (ht->array[i] != NULL)
+	elem = ht->array[i];
+	while (elem != NULL)
 	{
-		elem = ht->array[i];
-		while (elem != NULL)
-		{
-			next_node = elem->next;
-			free(elem->key);
-			free(elem->value);
-			free(elem->next);
-			free(elem);
-			elem = next_node;
-		}
+		next_node = elem->next;
+		free(elem->key);
+		free(elem->value);
+		free(elem);
+		elem = next_node;
 	}
-	i++;
 }
 free(ht->array);
-ht = NULL;
+free(ht);
 }
