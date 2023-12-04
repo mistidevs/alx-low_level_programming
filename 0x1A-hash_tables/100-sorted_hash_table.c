@@ -57,7 +57,6 @@ if (ht->shead == NULL)
 	nd->sprev = NULL;
 	return (0);
 }
-
 if (strcmp(ht->shead->key, nd->key) > 0)
 {
 	nd->snext = ht->shead;
@@ -66,11 +65,9 @@ if (strcmp(ht->shead->key, nd->key) > 0)
 	ht->shead = nd;
 	return (1);
 }
-
 curr = ht->shead;
 while (curr != NULL && strcmp(curr->key, nd->key) < 0)
 	curr = curr->snext;
-
 if (curr == NULL)
 {
 	nd->snext = NULL;
