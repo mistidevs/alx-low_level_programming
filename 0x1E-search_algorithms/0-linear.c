@@ -20,10 +20,9 @@ if (array == NULL)
 
 for (i = 0; i < (int)size; i++)
 {
-	printf("Value checked array[%d] = %d\n", i, *array);
-	if (value == *array)
+	printf("Value checked array[%d] = %d\n", i, array[i]);
+	if (value == array[i])
 		return (i);
-	array++;
 }
 
 return (-1);
