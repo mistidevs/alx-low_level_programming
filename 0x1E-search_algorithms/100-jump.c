@@ -22,7 +22,6 @@ step = (int)sqrt(size);
 
 for (i = 0; i < (int)size; i += step)
 {
-	printf("Value checked array[%d] = [%d]\n", i, array[i]);
 	if (array[i] >= value)
 	{
 		printf("Value found between indexes [%d] and [%d]\n", i - step, i);
@@ -34,6 +33,7 @@ for (i = 0; i < (int)size; i += step)
 		}
 		break;
 	}
+	printf("Value checked array[%d] = [%d]\n", i, array[i]);
 }
 
 printf("Value found between indexes [%d] and [%d]\n", i - step, i);
